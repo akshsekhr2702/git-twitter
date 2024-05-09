@@ -10,6 +10,11 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+//this is going to be the ewgular function which runs between req and resposne
+app.use(express.json()); //to parse req.body
+//to parse form data url encoded
+app.use(express.urlencoded({extended: true}));
+
 //this is used to create a middle ware app.use
 app.use("/api/auth", authRoutes);
 
