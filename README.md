@@ -1,2 +1,2 @@
 # twitter-clone
-Basic twitter clone web application.
+Basic twitter clone web application using MERN.
