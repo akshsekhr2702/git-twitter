@@ -3,6 +3,8 @@ import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 
 import authRoutes from "./routes/auth.routes.js";
+import userRoutes from "./routes/user.routes.js";
+
 import connectMongoDB from "./db/connectMongoose.js";
 
 
@@ -21,11 +23,12 @@ app.use(express.urlencoded({extended: true}));
 app.use(cookieParser());
 //this is used to create a middle ware app.use
 app.use("/api/auth", authRoutes);
+app.use("/api/users", userRoutes);
 
 
 
 //process.env.MONGO_URI this thing displays the mongo uri what we wrote in the dotenv file
-console.log(process.env.MONGO_URI);
+// console.log(process.env.MONGO_URI);
 
 
 
