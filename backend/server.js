@@ -1,8 +1,9 @@
 import express from "express";
-import authRoutes from "./routes/auth.routes.js";
 import dotenv from "dotenv";
-import connectMongoDB from "./db/connectMongoose.js";
 import cookieParser from "cookie-parser";
+
+import authRoutes from "./routes/auth.routes.js";
+import connectMongoDB from "./db/connectMongoose.js";
 
 
 //this is used to call out the elements or variables stored in dotenv file
@@ -14,10 +15,10 @@ const PORT = process.env.PORT || 5000;
 //this is going to be the ewgular function which runs between req and resposne
 app.use(express.json()); //to parse req.body
 
-app.use(cookieParser());
 //to parse from data(urlencoded)
 app.use(express.urlencoded({extended: true}));
 
+app.use(cookieParser());
 //this is used to create a middle ware app.use
 app.use("/api/auth", authRoutes);
 
