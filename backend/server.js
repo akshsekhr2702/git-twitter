@@ -5,7 +5,7 @@ import { v2 as cloudinary } from "cloudinary";
 
 import authRoutes from "./routes/auth.routes.js";
 import userRoutes from "./routes/user.routes.js";
-
+import postRoutes from "./routes/post.routes.js";
 import connectMongoDB from "./db/connectMongoose.js";
 
 
@@ -31,6 +31,7 @@ app.use(cookieParser());
 //this is used to create a middle ware app.use
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
+app.use("/api/posts", postRoutes);
 
 
 
